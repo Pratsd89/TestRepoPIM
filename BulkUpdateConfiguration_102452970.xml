@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="EN_CA" WorkspaceID="Main" UseContextLocale="false">
+    <BulkUpdateConfigurations>
+        <BulkUpdateConfiguration ID="102452970"><!-- Definition:
+<?xml version="1.0" encoding="UTF-8"?>
+<BulkUpdate Version="1" AutoApprove="false">
+  <Operations>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet1</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet1'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet2</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet2'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet3</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet3'), '[\\r\n]',' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet4</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet4'), '[\\r\n]',' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet5</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet5'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet6</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet6'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet7</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet7'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Bullet1</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Bullet1'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Bullet2</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Bullet2'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Bullet3</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Bullet3'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Bullet4</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Bullet4'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Bullet5</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Bullet5'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fabric_Copy_Bullet1</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fabric_Copy_Bullet1'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fabric_Copy_Bullet2</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fabric_Copy_Bullet2'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fabric_Copy_Bullet3</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fabric_Copy_Bullet3'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fabric_Copy_Bullet4</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fabric_Copy_Bullet4'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fabric_Copy_Bullet5Multi</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fabric_Copy_Bullet5Multi'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet8</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet8'),'[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet9</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet9'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Bullet10</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Bullet10'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Overview_Copy</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Overview_Copy'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_Fit_and_Sizing_Copy</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">trim(RegExpSubstitute(value('a_Fit_and_Sizing_Copy'), '[\\r\n]', ' '))</Parameter>
+        <Parameter ID="Value" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+    <BulkUpdateSetSingleValue>
+      <Parameters>
+        <Parameter ID="AttributeId" Type="java.lang.String">a_main_last_modified_date</Parameter>
+        <Parameter ID="Formula" Type="java.lang.String">Now()</Parameter>
+        <Parameter ID="Value" Type="java.lang.String">2022-10-18 19:31:02</Parameter>
+      </Parameters>
+    </BulkUpdateSetSingleValue>
+  </Operations>
+</BulkUpdate>
+ -->
+            <Name>FixNewLineCharacterInCopyDetailsAttrs_V2</Name>
+            <MetaData>
+                <Value AttributeID="asset.extension">xml</Value>
+                <Value AttributeID="asset.filename">BulkUpdateConfig.xml</Value>
+                <Value AttributeID="asset.format">XML (Extensible Markup Language document)</Value>
+                <Value AttributeID="asset.mime-type">application/xml</Value>
+                <Value AttributeID="asset.size">9300</Value>
+                <Value AttributeID="asset.uploaded">2024-05-16 10:35:20</Value>
+                <ValueGroup AttributeID="a_Last_Modified_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-16 10:35:20</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_Stibo_Creation_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-16 10:35:20</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_last_updated_by">
+                    <Value Derived="true" DerivedContextID="EN_CA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">Raj Patel</Value>
+                </ValueGroup>
+            </MetaData>
+            <ClassificationReference ClassificationID="ConfigurationsRoot"></ClassificationReference>
+            <Configuration>H4sIAAAAAAAAAO3aTW+bMBgH8Hs+heULibQkQJo2qUiq7CVSD2ur0fayTMgpbuTNvAgMbffpa8rapsOgTarsy3NKYhz/4fkp2EC8k/uIo5JmOUviBXZGNkY0vklCFu8W+OpyPZzhk2XP+1jwX1dpSARF1y+dMVoVIlmlaZaUdIFvCc8pXvYQ8s5TmhEhe+XVR9nw+n2fCl8Ozuk14QWtN8sOFyQjERVy7Oem/UZ0+nmBV0JkbFsIehpidPmQysifpCQjTuLdyJfb4h1ekuBcHk3J6F0gMzkVjjd+GaZ16HWSRQUn7cPKl6j/je6+3Kd+sc0FE3I/+mV1CH2rmWkNPiDr+2aTbeIflnyLrMHgX/bjqSbte6EYYq/pudbj7mIbtHANWLhgobSYGLCYvLUAirosBwYoDoBCRTE1QDGFM5TS4tCAxSFYKC2ODFgcgUVtsWYiIHEY+Oy3bNG5rlUng0uHi5Y1rjoZXDpctKx31cng0uGiZfGrTgaXDhctK2F1Mrj8cSHbjN0En5L0Qeuk34wFkTYRPdN9MxZE2kT0TPTNWBBpE9EzxTdjQaRNZPq14IKZYamzwUZ5n2Vm4D7LTFoARaMscwMUc/hZqB/i2iae4tqg8ZdGdRrXKlEFgoLyMl2XhSIWRGqRiLA44CQXQZSE7JbRMKhy30XlLLnrv0dRXdt1h449dGbImR9PnGNbdcn6v3X2xvt/8dnvu+w9ApSpqQFUJAAA</Configuration>
+        </BulkUpdateConfiguration>
+    </BulkUpdateConfigurations>
+</STEP-ProductInformation>

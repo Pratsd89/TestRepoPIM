@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="EN_CA" WorkspaceID="Main" UseContextLocale="false">
+    <BulkUpdateConfigurations>
+        <BulkUpdateConfiguration ID="128458408"><!-- Definition:
+<?xml version="1.0" encoding="UTF-8"?>
+<BulkUpdate Version="1" AutoApprove="false">
+  <Operations>
+    <BulkUpdateRunBusinessRule>
+      <Parameters>
+        <Parameter ID="businessRuleActionID" Type="java.lang.String">br_Export_Web_Hierarchy_Archive_Details</Parameter>
+        <Parameter ID="businessRuleConditionID" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateRunBusinessRule>
+  </Operations>
+</BulkUpdate>
+ -->
+            <Name>SEO_Web_Archive_Report</Name>
+            <MetaData>
+                <Value AttributeID="asset.extension">xml</Value>
+                <Value AttributeID="asset.filename">BulkUpdateConfig.xml</Value>
+                <Value AttributeID="asset.format">XML (Extensible Markup Language document)</Value>
+                <Value AttributeID="asset.mime-type">application/xml</Value>
+                <Value AttributeID="asset.size">439</Value>
+                <Value AttributeID="asset.uploaded">2024-09-20 05:15:11</Value>
+                <ValueGroup AttributeID="a_Last_Modified_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-09-20 05:15:11</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_Stibo_Creation_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-09-20 05:15:11</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-09-20 05:15:11</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_last_updated_by">
+                    <Value Derived="true" DerivedContextID="EN_CA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">Venugopal Nandimandalam</Value>
+                </ValueGroup>
+            </MetaData>
+            <ClassificationReference ClassificationID="stibo.IMConfigFolder"></ClassificationReference>
+            <Configuration>H4sIAAAAAAAAAI1Qy07DMBC85yusvZPAjYOTKiUgegKVFo7WJlmKwbUtP6L273GFWnyoKJeVdnZ2ZjR8ttsqNpHz0ugabsprYKQHM0q9qWG9eri6hVlT8HlUX2s7YiD2eiIDa2MwrbXOTFTDOypP0BSM8SdLDkNi+cOagN//ZdTz6KUm75dR0c89MZ7R4ZZCEj9COcgWXQ199tcOB/lFB2y1t8n8EycsFepN+RJcCg9N78T9zhoXxBv14lGmRG742Is2TTmR6CigVJ5XJ5N/Gd8ZPcpL3mdEM+hYSvVnK7zKW8zJTfENIZRtN7cBAAA=</Configuration>
+        </BulkUpdateConfiguration>
+    </BulkUpdateConfigurations>
+</STEP-ProductInformation>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="EN_CA" WorkspaceID="Main" UseContextLocale="false">
+    <BulkUpdateConfigurations>
+        <BulkUpdateConfiguration ID="140272"><!-- Definition:
+<?xml version="1.0" encoding="UTF-8"?>
+<BulkUpdate Version="1" AutoApprove="false">
+  <Operations>
+    <BulkUpdateRunBusinessRule>
+      <Parameters>
+        <Parameter ID="businessRuleActionID" Type="java.lang.String">br_setSEORedirectURL_test</Parameter>
+        <Parameter ID="businessRuleConditionID" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateRunBusinessRule>
+  </Operations>
+</BulkUpdate>
+ -->
+            <Name>SEOURL Configuration</Name>
+            <MetaData>
+                <Value AttributeID="asset.extension">xml</Value>
+                <Value AttributeID="asset.filename">BulkUpdateConfig.xml</Value>
+                <Value AttributeID="asset.format">XML (Extensible Markup Language document)</Value>
+                <Value AttributeID="asset.mime-type">application/xml</Value>
+                <Value AttributeID="asset.size">425</Value>
+                <Value AttributeID="asset.uploaded">2024-09-17 00:19:44</Value>
+                <ValueGroup AttributeID="a_Last_Modified_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-09-17 00:19:44</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_Stibo_Creation_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-09-17 00:19:44</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-09-17 00:19:44</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_last_updated_by">
+                    <Value Derived="true" DerivedContextID="EN_CA">Aditya Raj Singh</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">Aditya Raj Singh</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">Aditya Raj Singh</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">Aditya Raj Singh</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">Aditya Raj Singh</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">Aditya Raj Singh</Value>
+                </ValueGroup>
+            </MetaData>
+            <ClassificationReference ClassificationID="AssetsRoot"></ClassificationReference>
+            <Configuration>H4sIAAAAAAAAAI2QwW7CMBBE7/kKa+9Nyo2DExQKSEiVqALpFZlkiwzGtux1VP4eowrqQwU97uzsm9XwyfdJsQGdl0aXMMpfgaHuTC/1voR2s3gZw6TK+DSoY2t7Qcg+72ZgdSBTW+vMgCV8CeURqowxvrLoBEWXv45R+L1vgp4GLzV63wSFP/vo+BBOnJAi/CalIlvOStgld3V3xS9nwDZnG8MPYhC5Enqfr8nF56Haua1HWs9XDfbSYUdt874l9MSLO/ZfUW9G9/JZ2h/QRLrVUDzsgRdpb6m5yi4uHiZqqQEAAA==</Configuration>
+        </BulkUpdateConfiguration>
+    </BulkUpdateConfigurations>
+</STEP-ProductInformation>

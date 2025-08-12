@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="EN_CA" WorkspaceID="Main" UseContextLocale="false">
+    <BulkUpdateConfigurations>
+        <BulkUpdateConfiguration ID="Dropship_Shots_To_AssetHub"><!-- Definition:
+<?xml version="1.0" encoding="UTF-8"?>
+<BulkUpdate Version="1" AutoApprove="false">
+  <Operations>
+    <BulkUpdateRunBusinessRule>
+      <Parameters>
+        <Parameter ID="businessRuleActionID" Type="java.lang.String">Dropship_Shots_Trigger_To_AssetHub</Parameter>
+        <Parameter ID="businessRuleConditionID" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateRunBusinessRule>
+  </Operations>
+</BulkUpdate>
+ -->
+            <Name>Dropship Shots To AssetHub</Name>
+            <MetaData>
+                <Value AttributeID="asset.extension">xml</Value>
+                <Value AttributeID="asset.filename">BulkUpdateConfig.xml</Value>
+                <Value AttributeID="asset.format">XML (Extensible Markup Language document)</Value>
+                <Value AttributeID="asset.mime-type">application/xml</Value>
+                <Value AttributeID="asset.size">434</Value>
+                <Value AttributeID="asset.uploaded">2024-05-16 10:35:20</Value>
+                <ValueGroup AttributeID="a_Last_Modified_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-16 10:35:20</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_Stibo_Creation_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-16 10:35:20</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-16 10:35:20</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_last_updated_by">
+                    <Value Derived="true" DerivedContextID="EN_CA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">Raj Patel</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">Raj Patel</Value>
+                </ValueGroup>
+            </MetaData>
+            <ClassificationReference ClassificationID="ConfigurationsRoot"></ClassificationReference>
+            <Configuration>H4sIAAAAAAAAAI2QMW/CMBCF9/wK6/YmdOvgBAWiqkytIHSNDDkSg7Etnx21/75GFdRD1TLeu3ffOz0+/zgrNqEjaXQJj/kMGOq96aUeSti2zw9PMK8yvgjqtLW98Mjeb2ZgdfCmttaZCUs4CEUIVcYYf7XohI8uuoxR+LlfB70IJDUSrYPC7310vAknzugj/CqlIls1JeySu3p/wa8aYO2njeFHMYlcCT3kG+/i81A1zlgape02o/HUtU4OA7quNV1NhP4l7Hhx49+VuTS6l//F/gJNpGsfxZ+F8CItMDVX2RfOjJJZsgEAAA==</Configuration>
+        </BulkUpdateConfiguration>
+    </BulkUpdateConfigurations>
+</STEP-ProductInformation>

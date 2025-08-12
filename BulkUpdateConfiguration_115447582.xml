@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<STEP-ProductInformation ContextID="EN_CA" WorkspaceID="Main" UseContextLocale="false">
+    <BulkUpdateConfigurations>
+        <BulkUpdateConfiguration ID="115447582"><!-- Definition:
+<?xml version="1.0" encoding="UTF-8"?>
+<BulkUpdate Version="1" AutoApprove="false">
+  <Operations>
+    <BulkUpdateRunBusinessRule>
+      <Parameters>
+        <Parameter ID="businessRuleActionID" Type="java.lang.String">br_Size_Model_AssociationJP</Parameter>
+        <Parameter ID="businessRuleConditionID" Type="java.lang.String"></Parameter>
+      </Parameters>
+    </BulkUpdateRunBusinessRule>
+  </Operations>
+</BulkUpdate>
+ -->
+            <Name>Size Code Missing JPN</Name>
+            <MetaData>
+                <Value AttributeID="asset.extension">xml</Value>
+                <Value AttributeID="asset.filename">BulkUpdateConfig.xml</Value>
+                <Value AttributeID="asset.format">XML (Extensible Markup Language document)</Value>
+                <Value AttributeID="asset.mime-type">application/xml</Value>
+                <Value AttributeID="asset.size">427</Value>
+                <Value AttributeID="asset.uploaded">2024-05-28 00:07:09</Value>
+                <ValueGroup AttributeID="a_Last_Modified_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-28 00:07:09</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_Stibo_Creation_Date">
+                    <Value Derived="true" DerivedContextID="EN_CA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">2024-05-28 00:07:09</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">2024-05-28 00:07:09</Value>
+                </ValueGroup>
+                <ValueGroup AttributeID="a_last_updated_by">
+                    <Value Derived="true" DerivedContextID="EN_CA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_JP">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_SA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="EN_US">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="FR_CA">Venugopal Nandimandalam</Value>
+                    <Value Derived="true" DerivedContextID="JA_JP">Venugopal Nandimandalam</Value>
+                </ValueGroup>
+            </MetaData>
+            <ClassificationReference ClassificationID="Bulk Update Configurations"></ClassificationReference>
+            <Configuration>H4sIAAAAAAAAAI1Qy4rCMBTd9yvC3U/r7FyklWoRHBhGfG1LbO9INCYhjzLj1xsVNQtRl/fc8+LQwd9ekA6N5Urm8Jn2gKBsVMvlJoflYvzRh0GR0KEXu6VumUOyupGBlN6pUmujOszhlwmLUCSE0B+NhrnAsqczAHf9zMuht1yitTMv8PIPjCkzbI8umF+hGCSTKod1pCubk/2kArL41yF8yzqWCiY36dyZUB6Ktann/ID1t2pR1KW1quHnTl9Tmt2M3wobKdnyV3kPTCPoOkT2dAmaxcvF5CI5AuGSnRyrAQAA</Configuration>
+        </BulkUpdateConfiguration>
+    </BulkUpdateConfigurations>
+</STEP-ProductInformation>
