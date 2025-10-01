@@ -25,7 +25,7 @@
   "parameters" : [ {
     "id" : "Config",
     "type" : "com.stibo.core.domain.parameter.LOVCrossValidationConfig",
-    "value" : "<map>\n  <entry>\n    <key LOVID=\"lov_badge_flag_type\">STATIC</key>\n    <value>\n      <set>\n        <element LOVID=\"lov_badge_GAP\">107</element>\n        <element LOVID=\"lov_badge_GAP\">108</element>\n        <element LOVID=\"lov_badge_GAP\">109</element>\n        <element LOVID=\"lov_badge_GAP\">111</element>\n        <element LOVID=\"lov_badge_GAP\">105</element>\n        <element LOVID=\"lov_badge_GAP\">110</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"lov_badge_flag_type\">DYNAMIC</key>\n    <value>\n      <set>\n        <element LOVID=\"lov_badge_GAP\">106</element>\n        <element LOVID=\"lov_badge_GAP\">105</element>\n      </set>\n    </value>\n  </entry>\n</map>"
+    "value" : "<map>\n  <entry>\n    <key LOVID=\"lov_badge_flag_type\">DYNAMIC</key>\n    <value>\n      <set>\n        <element LOVID=\"lov_badge_GAP\">106</element>\n        <element LOVID=\"lov_badge_GAP\">105</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"lov_badge_flag_type\">STATIC</key>\n    <value>\n      <set>\n        <element LOVID=\"lov_badge_GAP\">108</element>\n        <element LOVID=\"lov_badge_GAP\">105</element>\n        <element LOVID=\"lov_badge_GAP\">107</element>\n        <element LOVID=\"lov_badge_GAP\">109</element>\n        <element LOVID=\"lov_badge_GAP\">110</element>\n        <element LOVID=\"lov_badge_GAP\">111</element>\n      </set>\n    </value>\n  </entry>\n</map>"
   }, {
     "id" : "DefiningAttribute",
     "type" : "com.stibo.core.domain.Attribute",
