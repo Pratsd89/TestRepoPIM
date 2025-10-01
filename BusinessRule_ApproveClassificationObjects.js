@@ -10,7 +10,7 @@
   "type" : "BusinessAction",
   "setupGroups" : [ "Actions" ],
   "name" : "ApproveClassificationObjects",
-  "description" : "Business Rule to Approve objects",
+  "description" : null,
   "scope" : "Global",
   "validObjectTypes" : [ ],
   "allObjectTypesValid" : true,

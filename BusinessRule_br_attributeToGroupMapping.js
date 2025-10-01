@@ -10,7 +10,7 @@
   "type" : "BusinessAction",
   "setupGroups" : [ "Actions" ],
   "name" : "Attribute to Group Mapping",
-  "description" : "Attribute to Group Mapping",
+  "description" : null,
   "scope" : "Global",
   "validObjectTypes" : [ "stibo.normalattribute" ],
   "allObjectTypesValid" : false,

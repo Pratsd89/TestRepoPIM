@@ -10,7 +10,7 @@
   "type" : "BusinessAction",
   "setupGroups" : [ "Actions" ],
   "name" : "ApproveStyle",
-  "description" : "BusinessRule To Approve Style ",
+  "description" : "ApproveStyle",
   "scope" : "Global",
   "validObjectTypes" : [ "Style" ],
   "allObjectTypesValid" : false,

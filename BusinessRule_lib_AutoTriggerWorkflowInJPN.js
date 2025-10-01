@@ -10,7 +10,7 @@
   "type" : "BusinessLibrary",
   "setupGroups" : [ "Libraries" ],
   "name" : "Auto Trigger Workflow In JPN Library",
-  "description" : "Auto Trigger Workflow In JPN , Library Code",
+  "description" : null,
   "scope" : null,
   "validObjectTypes" : [ ],
   "allObjectTypesValid" : false,

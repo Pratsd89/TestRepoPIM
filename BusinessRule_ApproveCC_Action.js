@@ -10,7 +10,7 @@
   "type" : "BusinessAction",
   "setupGroups" : [ "Actions" ],
   "name" : "Approve CC",
-  "description" : "Business Rule To Approve CC",
+  "description" : null,
   "scope" : "Global",
   "validObjectTypes" : [ "CustomerChoice" ],
   "allObjectTypesValid" : false,
@@ -55,139 +55,109 @@
     "parameterClass" : "null",
     "value" : null,
     "description" : null
+  }, {
+    "contract" : "ClassificationProductLinkTypeBindContract",
+    "alias" : "sizeModelRef",
+    "parameterClass" : "com.stibo.core.domain.impl.ClassificationProductLinkTypeImpl",
+    "value" : "SKUToSizeCode",
+    "description" : null
+  }, {
+    "contract" : "WebUiContextBind",
+    "alias" : "webUI",
+    "parameterClass" : "null",
+    "value" : null,
+    "description" : null
   } ],
   "messages" : [ ],
   "pluginType" : "Operation"
 }
 */
-exports.operation0 = function (portal,log,node,stepManager,LKT,compCheck) {
-if(stepManager.getCurrentWorkspace().getID()== "Main")
-{
-//NonMerch Validation to ignore Search color
-var nonMerchType = node.getParent().getValue("a_product_merch_type").getSimpleValue();
-var nonMerch = true;
-if (!(nonMerchType == "COMPLIMENTARY GIFT BOXES" || nonMerchType == "GIFTS" || nonMerchType == "MONOGRAM SERVICE" || nonMerchType == "PREMIUM GIFT BOXES" || nonMerchType == "PREMIUM GIFT BOXES SVC" || nonMerchType == "STORED VALUE CARDS FIXED" || nonMerchType == "STORED VALUE CARDS FIXED OPTIONS" || nonMerchType == "STORED VALUE CARDS OPEN")){
-	nonMerch = false;
-	}
+exports.operation0 = function (portal,log,node,stepManager,LKT,sizeModelRef,webUI,compCheck) {
 
-var flag =0;
-var flag_SKU =0;
-var imageCheck  = compCheck.checkCCAssetCompleteness(node, stepManager);
-var nameColorCheck = compCheck.checkCCNameAndColor(node, stepManager, LKT);
-var skuCheck = compCheck.checkSKUDimensionForCC(node, stepManager);
 
-if (imageCheck != true) {
-	portal.showAlert("ERROR", "Business Condition ApproveCC failed", imageCheck); 
-}
-else if(nameColorCheck != true) {
-	portal.showAlert("ERROR", "Business Condition ApproveCC failed", nameColorCheck); 
+checkSKUDimensionForCC(node, stepManager)
 
-}
-else if(skuCheck != true) {	
-	portal.showAlert("ERROR", "Business Condition ApproveCC failed", skuCheck); 
-}
-else if (imageCheck == true && nameColorCheck ==true && skuCheck ==true)
-{
-	flag=1;
-}
-if (flag ==1)
-{
-		//reference approve
-		 var shotRequestReferences = node.getReferences(stepManager.getReferenceTypeHome().getReferenceTypeByID("CCToPhotoShotRef")).toArray();
-	if(shotRequestReferences.length != 0 ){
-	    for(var i=0;i<shotRequestReferences.length; i++ ){
-	        var shotRequest = shotRequestReferences[i].getTarget();
-	        shotRequest.approve();
-	        var externalAssetReferences = shotRequest.getReferences(stepManager.getReferenceTypeHome().getReferenceTypeByID("ShotRequestToExternalAsset")).toArray();        
-	         if(externalAssetReferences.length != 0 ){
-	                for(var n = 0 ; n<externalAssetReferences.length;n++){
-	                   var externalasset=externalAssetReferences[n].getTarget();
-	                   log.info(externalasset);
-	                   externalasset.approve();
-	                    }
-	                    }
-	                    
-	        }
-	        }
-	    //child check
-	/*var skuList = node.getChildren();
-		if( skuList.size() == 0)
-{
-	return("No child SKU found");
-}
-for(var j=0;j<skuList.size();j++)
-{
-	var sku=skuList.get(j);
-	if(sku.isInState("wf_NewSKUEnrichment","NewSKUEnrich2"))
-	{
-		sku.getTaskByID("wf_NewSKUEnrichment").triggerByID("Submit", "Approving SKU");
-	}
-}*/
-if(node.isInWorkflow("wf_StyleMaintenanceWorkflow"))
-	{
-//workflow
-	if(node.isInState("wf_StyleMaintenanceWorkflow","CCMaintenance")) 
-	{
-	    var wf = node.getWorkflowInstanceByID("wf_StyleMaintenanceWorkflow");
-	    log.info(wf);
-	    wf.getTaskByID("CCMaintenance").triggerByID("ApproveCC", "Approving CCs from Style Final Validation");
-	    ////NonMerch Validation to ignore Search color
-	    if(!nonMerch) {
-	    	   /*logic removed as a part of PPIM-3472
-	    	   var searchColor = node.getValue("a_Search_Color").getSimpleValue(); */
-			 var searchColor = node.getValue("a_Search_Color_Calc").getSimpleValue();
-			//https://gapinc.atlassian.net/browse/PPIM-12807 
-			var objBrand = node.getValue("a_Brand_Number").getSimpleValue();
-		    if( (searchColor == null || searchColor == '' ) && objBrand !='GPS' )
-		    {
-		    	portal.showAlert("ERROR", "Business Condition ApproveCC failed " + node.getID(), skuCheck); 
-		    		return "CC Search Color is missing, Please update it using CC Search Override Color (or) Color Palette Search Color";
-		    }
-	    }
-	    
-	    
-		    node.approve();
-		    return true;
-		    return("Approved Successfully");
+//PPIM-12814
+function checkSKUDimensionForCC(cc, step) {
+	var logArray = new Array();
+	var CCLcs = cc.getValue("a_CC_Life_Cycle_Status").getSimpleValue();
+	var children = cc.getChildren();
+	var expectOnlyDim1 = false;
+	var expectBoth = false;
+	var varaintDimMap =  new java.util.HashMap();
+	var dimDifferences ="";
+	if (children.size() > 0) {
+		if (CCLcs != "Waiting for Style Approval") {
+			var approvedSkus = [];
+			var unapprovedSkus = [];
+			var skuIter = children.iterator();
+			while (skuIter.hasNext()) {
+				var currSku = skuIter.next();
+				var classificationTypeHome = step.getHome(com.stibo.core.domain.classificationproductlinktype.ClassificationProductLinkTypeHome);
+				var classificationType = classificationTypeHome.getLinkTypeByID('SKUToSizeCode');
+				var refSizeCodeList = currSku.getClassificationProductLinks(classificationType);
+				var skuLcs = currSku.getValue("a_SKU_Life_Cycle_Status").getSimpleValue();
+				var skuEndDate = currSku.getValue("a_SKU_End_Date").getSimpleValue();
+				var today = new Date().toISOString().substring(0, 10);
 
-    //flag_SKU=1;
+				//PPIM-13258
+				if (skuLcs != null && skuLcs != "Draft" && skuLcs != "Purged" && (skuEndDate == null || skuEndDate > today)) {
+					if (refSizeCodeList.size() == 1) {
+						var refSizeCode = step.getClassificationHome().getClassificationByID(refSizeCodeList.get(0).getClassification().getID());
+						var variant = refSizeCode.getValue("a_SizeCodeVariant").getSimpleValue();
+						var dim1DimValue = refSizeCode.getValue("a_Dim1_Dimension_value").getSimpleValue();
+						var dim2 = refSizeCode.getValue("Dim2(child)").getSimpleValue();
 
-        //approve reference
+						if (variant == null || variant == "" || dim1DimValue == null || dim1DimValue == "") {
+							return "The Size Code Hierarchy needs to be enriched for product approval.";
+						}
+						else {
+							if (dim2 != null && dim2 != "") {
+								var dim2DimValue = refSizeCode.getValue("a_Dim2_Dimension_value").getSimpleValue();
+								if (dim2DimValue == "" || dim2DimValue == null) {
+									return "The Size Code Hierarchy needs to be enriched for product approval.";
+								}
+							}
+						}
+						//PPIM-15068 
 
-  
-	        //approval end
-	// return true;
-     // return("Approved Successfully");       
-    	 }	 
-  }
-else
-{
-	portal.showAlert("ERROR", "", "The CC " + node.getID() + " is not in workflow, Please click on the Save button to put the CC in Maintenance Workflow "); 
+						//approvedSkus.push(sku);
+						log.info(variant)
+						var dim2DimValue = refSizeCode.getValue("a_Dim2_Dimension_value").getSimpleValue();
+						if(!dimDifferences.includes(variant)){
+						if (dim1DimValue && (!dim2DimValue || dim2DimValue == "")) {
+							if(!varaintDimMap.get(variant)){
+								varaintDimMap.put(variant,"expectOnlyDim1")
+							}else{
+								dimDifferences +=variant+",";
+							}
+							//expectOnlyDim1 = true;
 
-}
-}	
-
-/*if(flag_SKU==1)
-{
-var skuList = node.getChildren();
-if( skuList.size() == 0)
-{
-	return("No child SKU found");
-}
-for(var j=0;j<skuList.size();j++)
-{
-	var sku=skuList.get(j);
-	if(sku.isInState("wf_NewSKUEnrichment","NewSKUEnrich2"))
-	{
-		sku.getTaskByID("wf_NewSKUEnrichment").triggerByID("Submit", "Approving SKU");
+						} else if (dim1DimValue && dim2DimValue && (dim1DimValue != "" && dim2DimValue != "")) {
+							if(!varaintDimMap.get(variant)){
+								varaintDimMap.put(variant,"expectBoth")
+							}else{
+								dimDifferences +=variant;
+							}							
+							//expectBoth = true;
+						}
+					}
+					}
+				}
+			}
+			//if (expectOnlyDim1 && expectBoth) {
+				if(dimDifferences!=""){
+				log.info("This style has discrepancies in Dim1-Dim2 Pattern,Please Correct them. "+dimDifferences)
+				return "This style has discrepancies in Dim1-Dim2 Pattern,Please Correct them.";
+				//webUI.showAlert("ERROR", "This style has discrepancies in Dim1-Dim2 Pattern,Please Correct them.")
+				//dim_dif = true;
+				//return false;
+			}
+			return true;
+		}
+		return true;
+	} else {
+		return "CC does not have any SKUs."
 	}
 }
-}*/
-}	
-else if(stepManager.getCurrentWorkspace().getID()== "Approved")	
-{
-	portal.showAlert("ERROR", "", "Modifications not allowed in Approved workspace. Please switch to Main workspace."); 
-	//return "Modifications not allowed in Approved workspace. Please switch to Main workspace.";			
-}
-
 }

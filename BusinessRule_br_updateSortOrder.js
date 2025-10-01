@@ -12,8 +12,8 @@
   "name" : "br_updateSortOrder",
   "description" : null,
   "scope" : "Global",
-  "validObjectTypes" : [ ],
-  "allObjectTypesValid" : true,
+  "validObjectTypes" : [ "WebCategory", "WebSubCategory" ],
+  "allObjectTypesValid" : false,
   "runPrivileged" : false,
   "onApprove" : "Never",
   "dependencies" : [ ]
@@ -28,11 +28,17 @@
     "parameterClass" : "null",
     "value" : null,
     "description" : null
+  }, {
+    "contract" : "BusinessActionBindContract",
+    "alias" : "save_Category",
+    "parameterClass" : "com.stibo.core.domain.impl.businessrule.FrontBusinessActionImpl",
+    "value" : "Save_Category",
+    "description" : null
   } ],
   "messages" : [ ],
   "pluginType" : "Operation"
 }
 */
-exports.operation0 = function (node) {
-log.info("node"+node)
+exports.operation0 = function (node,save_Category) {
+save_Category.execute(node.getParent());
 }

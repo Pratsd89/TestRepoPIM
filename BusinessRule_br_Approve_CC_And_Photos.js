@@ -10,7 +10,7 @@
   "type" : "BusinessCondition",
   "setupGroups" : [ "Conditions" ],
   "name" : "Approve CC And Photos",
-  "description" : "Business Conditions For Approving CC and Photos",
+  "description" : null,
   "scope" : "Global",
   "validObjectTypes" : [ "CustomerChoice" ],
   "allObjectTypesValid" : false,
@@ -128,18 +128,3 @@ else if (node.isInState(wfID, "NewCCEnrich_Final")) {
 }
 return true;
 }
-/*===== business rule plugin definition =====
-{
-  "pluginId" : "ReferenceOtherBCBusinessCondition",
-  "parameters" : [ {
-    "id" : "ReferencedBC",
-    "type" : "com.stibo.core.domain.businessrule.BusinessCondition",
-    "value" : "br_ReadOnlyCondition"
-  }, {
-    "id" : "ValueWhenReferencedIsNA",
-    "type" : "com.stibo.util.basictypes.TrueFalseParameter",
-    "value" : "true"
-  } ],
-  "pluginType" : "Precondition"
-}
-*/

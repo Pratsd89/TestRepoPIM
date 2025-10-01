@@ -1,0 +1,240 @@
+/*===== export metadata =====
+{
+  "contextId" : "EN_CA",
+  "workspaceId" : "Main"
+}
+*/
+/*===== business rule definition =====
+{
+  "id" : "br_SlugNullCheck_FR_CA",
+  "type" : "BusinessAction",
+  "setupGroups" : [ "SEO" ],
+  "name" : "br_SlugNullCheck_FR_CA",
+  "description" : null,
+  "scope" : "Global",
+  "validObjectTypes" : [ ],
+  "allObjectTypesValid" : true,
+  "runPrivileged" : false,
+  "onApprove" : "Never",
+  "dependencies" : [ {
+    "libraryId" : "LIB_BRFS",
+    "libraryAlias" : "LIB_BRFS"
+  } ]
+}
+*/
+/*===== business rule plugin definition =====
+{
+  "pluginId" : "JavaScriptBusinessActionWithBinds",
+  "binds" : [ {
+    "contract" : "CurrentObjectBindContract",
+    "alias" : "node",
+    "parameterClass" : "null",
+    "value" : null,
+    "description" : null
+  }, {
+    "contract" : "ManagerBindContract",
+    "alias" : "stepManager",
+    "parameterClass" : "null",
+    "value" : null,
+    "description" : null
+  }, {
+    "contract" : "MailHomeBindContract",
+    "alias" : "mail",
+    "parameterClass" : "null",
+    "value" : null,
+    "description" : null
+  } ],
+  "messages" : [ ],
+  "pluginType" : "Operation"
+}
+*/
+exports.operation0 = function (node,stepManager,mail,LIB_BRFS) {
+var filePath = "/opt/stibo/SEO-PIM-Report_For_Legacy_NLU.csv";
+var file = new java.io.File(filePath);
+if (!file.exists()) {
+    file.createNewFile();
+}
+var fw = new java.io.FileWriter(file, false);
+fw.write("ID,ParentID,GrandParentID,BrandNumber,ObjectType,TranslationStatus,ParentTranslationStatus,GrandParentTranslationStatus\n");
+
+
+
+/*function mainMethod(context) {
+    var catsList = LIB_BRFS.getNodeList();
+    for (var i = 0; i < catsList.size(); i++) {
+        var catObj = stepManager.getClassificationHome().getClassificationByID(catsList.get(i));
+        if (catObj != null) {
+            var rootBrand = catObj.getValue("a_Brand_Number").getSimpleValue();
+            var objectType = catObj.getObjectType().getID();
+            if (rootBrand != 'GPS') {
+                if (objectType == "WebDivision") {
+                    var isActiveDiv = isCategoryActiveOrFuture(catObj);
+                    if (isActiveDiv == true) {
+                        fw.write(catObj.getID() + "," + "DivParent" + "\n");
+                    }
+                }
+                else if (objectType == "WebCategory") {
+                    var isActiveCat = isCategoryActiveOrFuture(catObj);
+                    if (isActiveCat == true) {
+                        var parentDiv = catObj.getParent();
+                        var isActiveDiv = isCategoryActiveOrFuture(parentDiv);
+                        if (isActiveDiv == true) {
+                            fw.write(catObj.getID() + "," + parentDiv.getID() + "," + "DivParent" + "\n");
+                        }
+                    }
+                }
+                else if (objectType == "WebSubCategory") {
+                    var isActiveSubCat = isCategoryActiveOrFuture(catObj);
+                    if (isActiveSubCat == true) {
+                        var parentCat = catObj.getParent();
+                        var isActiveCat = isCategoryActiveOrFuture(parentCat);
+                        if (isActiveCat == true) {
+                            var parentDiv = catObj.getParent().getParent();
+                            var isActiveDiv = isCategoryActiveOrFuture(parentDiv);
+                            if (isActiveDiv == true) {
+                                fw.write(catObj.getID() + "," + parentCat.getID() + "," + parentDiv.getID() + "\n");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+
+function mainMethod(context, contextID) {
+    var webHierarchy = stepManager.getClassificationHome().getClassificationByID("101130");
+    var allBrands = webHierarchy.getChildren();
+    for (var i = 0; i < allBrands.size(); i++) {
+        var eachBrand = allBrands.get(i);
+        var brandNum = eachBrand.getValue("a_Brand_Number").getSimpleValue();
+        if (brandNum != "GPS") {
+            var eachBrandDivisionList = new java.util.ArrayList();
+            eachBrandDivisionList = eachBrand.getChildren();
+            var eachBrandCatsList = new java.util.ArrayList();
+            var eachBrandSubCatsList = new java.util.ArrayList();
+
+            for (var j = 0; j < eachBrandDivisionList.size(); j++) {
+                var divObj = eachBrandDivisionList.get(j);
+                if (divObj != null) {
+                    var objectType = divObj.getObjectType().getID();
+                    if (objectType.equals("WebDivision") && divObj.getValue('a_Division_Display_Type').getValue() != null && !divObj.getValue('a_Division_Display_Type').getValue().equalsIgnoreCase("Division: Sister Site")) {
+                        eachBrandCatsList.addAll(divObj.getChildren());
+                        var isActiveDiv = isCategoryActiveOrFuture(divObj);
+                        var divTranslationStatus = divObj.getValue("a_Cat_Translation_Status").getSimpleValue();
+                        if (divObj.getValue("a_Natural_Language_URL").getSimpleValue()==null && isActiveDiv == true && (divTranslationStatus == "Complete" || divTranslationStatus == "" || divTranslationStatus == null)) {
+                            fw.write(divObj.getID() + "," + "" + "," + "" + "," + brandNum + "," + objectType + "," + divTranslationStatus + "," + "" + "," + "" + "\n");
+                        }
+                    }
+                }
+            }
+
+            for (var k = 0; k < eachBrandCatsList.size(); k++) {
+                var catObj = eachBrandCatsList.get(k);
+                if (catObj != null) {
+                    var objectType = catObj.getObjectType().getID();
+                    if (objectType == "WebCategory") {
+                        eachBrandSubCatsList.addAll(catObj.getChildren());
+                        var isActiveCat = isCategoryActiveOrFuture(catObj);
+                        var catTranslationStatus = catObj.getValue("a_Cat_Translation_Status").getSimpleValue();
+                        if (catObj.getValue("a_Natural_Language_URL").getSimpleValue()==null  && isActiveCat == true) {
+                            var parentDiv = catObj.getParent();
+                            var isActiveDiv = isCategoryActiveOrFuture(parentDiv);
+                            var parentDivTranslationStatus = parentDiv.getValue("a_Cat_Translation_Status").getSimpleValue();
+                            if (isActiveDiv == true && (catTranslationStatus == "Complete" || catTranslationStatus == "" || catTranslationStatus == null)) {
+                                fw.write(catObj.getID() + "," + parentDiv.getID() + "," + "" + "," + brandNum + "," + objectType + "," + catTranslationStatus + "," + parentDivTranslationStatus + "," + "" + "\n");
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (var l = 0; l < eachBrandSubCatsList.size(); l++) {
+                var subCatObj = eachBrandSubCatsList.get(l);
+                if (subCatObj != null) {
+                    var objectType = subCatObj.getObjectType().getID();
+                    if (objectType == "WebSubCategory") {
+                        var isActiveSubCat = isCategoryActiveOrFuture(subCatObj);
+                        var subCatTranslationStatus = subCatObj.getValue("a_Cat_Translation_Status").getSimpleValue();
+                        if (subCatObj.getValue("a_Natural_Language_URL").getSimpleValue()==null && isActiveSubCat == true) {
+                            var parentCat = subCatObj.getParent();
+                            var isActiveCat = isCategoryActiveOrFuture(parentCat);
+                            var parentCatTranslationStatus = parentCat.getValue("a_Cat_Translation_Status").getSimpleValue();
+                            if (isActiveCat == true) {
+                                var parentDiv = subCatObj.getParent().getParent();
+                                var isActiveDiv = isCategoryActiveOrFuture(parentDiv);
+                                var parentDivTranslationStatus = parentDiv.getValue("a_Cat_Translation_Status").getSimpleValue();
+                                if (isActiveDiv == true && (subCatTranslationStatus == "Complete" || subCatTranslationStatus == "" || subCatTranslationStatus == null)) {
+                                    fw.write(subCatObj.getID() + "," + parentCat.getID() + "," + parentDiv.getID() + "," + brandNum + "," + objectType + "," + subCatTranslationStatus + "," + parentCatTranslationStatus + "," + parentDivTranslationStatus + "\n");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function isCategoryActiveOrFuture(categoryOBj) {
+    if (categoryOBj != "undefined") {
+        var description = categoryOBj.getValue("a_Category_Description").getSimpleValue();
+        if (description != null) {
+            var today = new Date();
+            var startDate = categoryOBj.getValue("a_WebCategory_Start_Date").getSimpleValue();
+            var endDate = categoryOBj.getValue("a_WebCategory_End_Date").getSimpleValue();
+            if (endDate != null) {
+                var formattedEndDate = new Date(endDate);
+                formattedEndDate.setHours(23);
+                formattedEndDate.setMinutes(59);
+                formattedEndDate.setSeconds(59);
+            }
+            if (startDate != null) {
+                var formattedStartDate = new Date(startDate);
+                formattedStartDate.setHours(23);
+                formattedStartDate.setMinutes(59);
+                formattedStartDate.setSeconds(59);
+            }
+
+            if (endDate == null && (formattedStartDate >= today || formattedStartDate <= today)) {
+                // if there is no end date means it will never expire and currently active or future active based on the start date
+                return true;
+            } else if (formattedEndDate >= today && (formattedStartDate >= today || formattedStartDate <= today)) {
+                // End date is greater than today then It is not expired irrespective of start date
+                return true;
+            } else if (endDate == null && startDate == null) {
+                return false;
+            } else {
+                return false;
+            }
+        }
+    }
+}
+
+
+mainMethod("FR_CA");
+
+fw.flush();
+fw.close();
+
+
+var fileInputStream = new java.io.FileInputStream(file);
+var asset = stepManager.getAssetHome().getAssetByID("TF_128577680");
+var uploaded = asset.upload(fileInputStream, filePath);
+// set up Email 
+var mailMethod = mail.mail();
+var emailIDTO = mailMethod.addTo("sri_indu_dekkapati@gap.com;jagadish_beejapu@gap.com");
+var emailSubject = mailMethod.subject("SlugNameCheck_FR_CA");
+var emailBody = mailMethod.plainMessage("Slug Name Check FR_CA");
+// set attachment 
+var attachment = mailMethod.attachment();
+var fromAsssest = attachment.fromAsset(asset);
+var setAttachMentName = attachment.name("SlugNameCheck_FR_CA.csv");
+attachment.attach();
+//send email 
+var mailSentStatus = mailMethod.send();
+
+}

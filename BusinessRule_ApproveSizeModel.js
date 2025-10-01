@@ -10,7 +10,7 @@
   "type" : "BusinessAction",
   "setupGroups" : [ "Actions" ],
   "name" : "ApproveSizeModel",
-  "description" : "Business Rule To Approve Size Model",
+  "description" : null,
   "scope" : "Global",
   "validObjectTypes" : [ "SizeModel" ],
   "allObjectTypesValid" : false,

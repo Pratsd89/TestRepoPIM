@@ -1,0 +1,40 @@
+/*===== export metadata =====
+{
+  "contextId" : "EN_CA",
+  "workspaceId" : "Main"
+}
+*/
+/*===== business rule definition =====
+{
+  "id" : "bc_a_WashTagInclusion",
+  "type" : "BusinessCondition",
+  "setupGroups" : [ "Varinat Attribution" ],
+  "name" : "bc_a_WashTagInclusion",
+  "description" : null,
+  "scope" : "Global",
+  "validObjectTypes" : [ ],
+  "allObjectTypesValid" : true,
+  "runPrivileged" : true,
+  "onApprove" : "Never",
+  "dependencies" : [ ]
+}
+*/
+/*===== business rule plugin definition =====
+{
+  "pluginId" : "LOVCrossValidationBusinessCondition",
+  "parameters" : [ {
+    "id" : "Config",
+    "type" : "com.stibo.core.domain.parameter.LOVCrossValidationConfig",
+    "value" : "<map>\n  <entry>\n    <key LOVID=\"Brand\">1</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">2532</element>\n        <element LOVID=\"Wash_Tag\">2513</element>\n        <element LOVID=\"Wash_Tag\">1852</element>\n        <element LOVID=\"Wash_Tag\">1849</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">1850</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n        <element LOVID=\"Wash_Tag\">1851</element>\n        <element LOVID=\"Wash_Tag\">1848</element>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2270</element>\n        <element LOVID=\"Wash_Tag\">2085</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">5</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">3</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">2532</element>\n        <element LOVID=\"Wash_Tag\">2513</element>\n        <element LOVID=\"Wash_Tag\">1849</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">1850</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2270</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">4</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">2532</element>\n        <element LOVID=\"Wash_Tag\">2513</element>\n        <element LOVID=\"Wash_Tag\">1848</element>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2085</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">11</key>\n    <value>\n      <set/>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">12</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">2532</element>\n        <element LOVID=\"Wash_Tag\">1853</element>\n        <element LOVID=\"Wash_Tag\">2513</element>\n        <element LOVID=\"Wash_Tag\">1852</element>\n        <element LOVID=\"Wash_Tag\">1849</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">1850</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n        <element LOVID=\"Wash_Tag\">1851</element>\n        <element LOVID=\"Wash_Tag\">3186</element>\n        <element LOVID=\"Wash_Tag\">1848</element>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">2535</element>\n        <element LOVID=\"Wash_Tag\">2534</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2270</element>\n        <element LOVID=\"Wash_Tag\">2085</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">2</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">1848</element>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2085</element>\n      </set>\n    </value>\n  </entry>\n  <entry>\n    <key LOVID=\"Brand\">7</key>\n    <value>\n      <set>\n        <element LOVID=\"Wash_Tag\">2532</element>\n        <element LOVID=\"Wash_Tag\">1853</element>\n        <element LOVID=\"Wash_Tag\">2513</element>\n        <element LOVID=\"Wash_Tag\">1852</element>\n        <element LOVID=\"Wash_Tag\">1849</element>\n        <element LOVID=\"Wash_Tag\">1847</element>\n        <element LOVID=\"Wash_Tag\">1850</element>\n        <element LOVID=\"Wash_Tag\">2533</element>\n        <element LOVID=\"Wash_Tag\">1851</element>\n        <element LOVID=\"Wash_Tag\">3186</element>\n        <element LOVID=\"Wash_Tag\">1848</element>\n        <element LOVID=\"Wash_Tag\">1846</element>\n        <element LOVID=\"Wash_Tag\">2535</element>\n        <element LOVID=\"Wash_Tag\">2534</element>\n        <element LOVID=\"Wash_Tag\">2531</element>\n        <element LOVID=\"Wash_Tag\">2270</element>\n        <element LOVID=\"Wash_Tag\">2085</element>\n      </set>\n    </value>\n  </entry>\n</map>"
+  }, {
+    "id" : "DefiningAttribute",
+    "type" : "com.stibo.core.domain.Attribute",
+    "value" : "a_Brand_Number"
+  }, {
+    "id" : "DependentAttribute",
+    "type" : "com.stibo.core.domain.Attribute",
+    "value" : "a_Wash_Tag"
+  } ],
+  "pluginType" : "Operation"
+}
+*/
